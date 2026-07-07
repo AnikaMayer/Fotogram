@@ -22,3 +22,23 @@ header {
     display: flex;
     align-items: center;
 }
+
+footer {
+    height: 100px;
+    background-color: rgba(9, 33, 42, 1);
+    border-top-right-radius: 40%;
+    border-top-left-radius: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+
+    p {
+        color: rgba(153, 172, 179, 1);
+        font-family: "Figtree";
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+}
