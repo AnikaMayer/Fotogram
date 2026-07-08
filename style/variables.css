@@ -1,0 +1,15 @@
+:root {
+    --bg_darkblue_light: rgba(9, 33, 42, 1);
+    --bg_darkblue_dark: rgba(6, 23, 30, 1);
+
+    --button_blue_light: rgba(18, 70, 88, 1);
+    --button_blue_dark: rgba(13, 50, 64, 1);
+
+    --border_blue: rgba(107, 193, 225, 1);
+    --da_bluegrey: rgba(153, 172, 179, 1);
+
+    --button_red_light: rgba(253, 91, 79, 0.1);
+    --button_red_dark: rgba(253, 91, 79, 0.2);
+
+    --font_white: white;
+}
