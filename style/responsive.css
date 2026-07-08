@@ -1,4 +1,6 @@
-/* --contentbegrenzung: clamp(16px, 9.5dvh, 135px); */
+:root {
+    --contentbegrenzung: clamp(16px, 12.64375% - 47.07px, 135px);
+}
 
 @media screen and (min-width: 1441px) {
     header {
