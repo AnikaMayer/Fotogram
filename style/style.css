@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0;
     font-family: "Figtree";
+    color: white;
     box-sizing: border-box;
     scroll-behavior: smooth;
     position: relative;
@@ -93,6 +94,121 @@ main {
                 transform: scale(1.1);
                 transition: all 250ms ease-in-out;
             }
+        }
+    }
+}
+
+.dialog_wrapper {
+    height: 670px;
+    width: auto;
+    background-color: rgba(9, 33, 42, 1);
+    border-radius: 40px;
+    border: none;
+
+    align-self: center;
+    justify-self: center;
+    /* position: sticky; */
+
+    /* transition: 250ms ease-in-out; */
+
+    .dialog_box {
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 56px 60px;
+    }
+
+    .dialog_head {
+        display: flex;
+        justify-content: space-between;
+        align-self: normal;
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 100%;
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background: none;
+            border: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:hover {
+            background-color: rgba(18, 70, 88, 1);
+        }
+
+        button:active {
+            background-color: rgba(13, 50, 64, 1);
+        }
+    }
+
+    .dialog_img {
+        height: 370px;
+        width: 560px;
+
+        display: flex;
+
+        img {
+            object-fit: cover;
+            height: 370px;
+            width: 100%;
+        }
+    }
+
+    .dialog_foot {
+        height: 60px;
+        width: 260px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            background-color: rgba(253, 91, 79, 0.1);
+            border: none;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button_left {
+            transform: rotate(180deg);
+        }
+
+        button:hover {
+            background-color: rgba(253, 91, 79, 0.2);
+        }
+
+        /* button:active {
+            background-color: rgba(253, 91, 79, 0.15);
+        } */
+
+        p {
+            height: 60px;
+            width: 140px;
+            font-size: 1rem;
+            font-weight: 500;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
