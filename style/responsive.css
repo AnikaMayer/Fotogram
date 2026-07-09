@@ -1,13 +1,59 @@
 :root {
     --contentbegrenzung: clamp(16px, 12.64375% - 47.07px, 135px);
+    --padding_header: clamp(76px, 10dvw, 140px);
+}
+
+@media screen and (max-width: 747px) {
+    header {
+        height: clamp(70px, 19dvw, 80px);
+        justify-content: center;
+        padding: 0;
+
+        img {
+            height: auto;
+            width: clamp(168px, 10dvw, 216px);
+        }
+    }
+
+    .photo_album {
+        padding: 0 clamp(16px, 7dvw, 50px);
+
+        h1 {
+            font-size: clamp(2rem, 10dvw, 4rem);
+        }
+    }
+
+    .dialog_wrapper {
+        /* height: 670px;
+        width: auto; */
+
+        .dialog_head {
+            justify-content: space-between;
+            align-self: normal;
+
+            button {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    footer {
+        height: clamp(100px, 17dvw, 120px);
+
+        img {
+            width: clamp(100px, 18dvw, 130px);
+            height: auto;
+        }
+    }
 }
 
 @media screen and (min-width: 1441px) {
     header {
-        padding: 0px max(135px, calc(50% - 720px));
+        padding: 0px max(140px, calc(50% - 720px));
     }
 
-    main {
+    .photo_album {
         padding: 0px max(135px, calc(50% - 720px));
     }
 

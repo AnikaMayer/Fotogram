@@ -26,7 +26,7 @@ header {
     height: 80px;
     width: 100%;
     background-color: var(--bg_darkblue_light);
-    padding-left: 140px;
+    padding-left: var(--padding_header);
 
     display: flex;
     align-items: center;
@@ -34,10 +34,12 @@ header {
 
 main {
     height: 100dvh;
+    width: 100%;
     /* height: calc(100dvh - 96px); */
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+    padding-top: clamp(40px, 12dvw, 160px);
 }
 
 .photo_album {
@@ -49,16 +51,18 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 80px;
+    gap: clamp(56px, 17dvw, 80px);
 
-    margin-top: 160px;
-    /* padding: 0 var(--contentbegrenzung); */
-    padding: 0 135px;
+    /* margin-top: 160px; */
+    padding: 0 var(--contentbegrenzung);
+    /* padding: 0 135px; */
 
     h1 {
         color: var(--font_white);
         font-size: 4rem;
+        /* font-size: clamp(2rem, 4dvh, 4rem); */
         font-weight: 800;
+        text-align: center;
         line-height: 100%;
     }
 
@@ -107,9 +111,7 @@ main {
 
     align-self: center;
     justify-self: center;
-    /* position: sticky; */
-
-    /* transition: 250ms ease-in-out; */
+    position: fixed;
 
     .dialog_box {
         height: 100%;
@@ -119,7 +121,7 @@ main {
         justify-content: space-between;
         align-items: center;
 
-        padding: 56px 60px;
+        padding: 56px clamp(20px, 6dvw, 60px);
     }
 
     .dialog_head {
@@ -156,12 +158,12 @@ main {
 
     .dialog_img {
         height: 370px;
-        width: 560px;
+        width: 100%;
 
         display: flex;
 
         img {
-            object-fit: cover;
+            object-fit: contain;
             height: 370px;
             width: 100%;
         }
@@ -196,9 +198,9 @@ main {
             background-color: var(--button_red_dark);
         }
 
-        /* button:active {
-            background-color: rgba(253, 91, 79, 0.15);
-        } */
+        button:active {
+            background-color: var(--button_red_medium);
+        }
 
         p {
             height: 60px;
@@ -213,8 +215,29 @@ main {
     }
 }
 
+dialog {
+    transform: translateY(10px);
+    transition: all 1.5s ease-in-out;
+}
+
+dialog.opened {
+    transform: translateY(0px);
+    transition: all 1.5s ease-in-out;
+}
+
+dialog::backdrop {
+    opacity: 0;
+    background-color: black;
+    transition: all 250ms ease-in;
+}
+
+dialog.opened::backdrop {
+    opacity: 0.4;
+    transition: all 250ms ease-in;
+}
+
 footer {
-    height: 100px;
+    height: 120px;
     width: 100%;
     background-color: var(--bg_darkblue_light);
     border-top-right-radius: 40%;

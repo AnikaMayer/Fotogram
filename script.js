@@ -4,6 +4,10 @@ const photoArray = [
         path: "tokyo_buildings.jpg",
     },
     {
+        name: "Mejiro Bird",
+        path: "mejiro_bird.jpg",
+    },
+    {
         name: "Mountain View",
         path: "mountain_view.jpg",
     },
@@ -16,10 +20,6 @@ const photoArray = [
         path: "onaruto_bridge.jpg",
     },
     {
-        name: "Origami Cranes",
-        path: "origami.jpg",
-    },
-    {
         name: "Mountain Fuji-san",
         path: "fuji_san.jpg",
     },
@@ -28,8 +28,8 @@ const photoArray = [
         path: "shiba_inu.jpg",
     },
     {
-        name: "Mejiro Bird",
-        path: "mejiro_bird.jpg",
+        name: "Origami Cranes",
+        path: "origami.jpg",
     },
     {
         name: "Shinto Shrine",
@@ -44,12 +44,12 @@ const photoArray = [
         path: "koi_fish.jpg",
     },
     {
-        name: "Woman watching cityscape",
+        name: "Cityscape",
         path: "woman_view.jpg",
     }
 ];
 
-// rendering photo-boxes
+// #region render boxes
 
 function renderGallery() {
     const photo_containerRef = document.getElementById('photo_container');
@@ -57,14 +57,16 @@ function renderGallery() {
     for (let i = 0; i < photoArray.length; i++) {
         photo_containerRef.innerHTML += /*html*/`
         <div class="photo_box">
-            <img id="photo$(photoArray[i])" onclick="openDialog(${i})" src="../assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
+            <img id="photo$(photoArray[i])" onclick="openDialog(${i})" src="./assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
         </div>
     `
         
     }
 }
 
-// render dialog
+// #endregion
+
+// #region dialog template
 
 const photo_dialogRef = document.getElementById('photo_dialog');
 
@@ -87,9 +89,14 @@ function templateDialog(i) {
     `
 }
 
+// #endregion
+
+// #region dialog functions
+
 function openDialog(i) {
     photo_dialogRef.showModal();
     photo_dialogRef.innerHTML = templateDialog(i);
+    photo_dialogRef.classList.add("opened");
 }
 
 function changeToNextPhoto(i) {
@@ -110,8 +117,11 @@ function changeToPrevPhoto(i) {
 
 function closeDialog() {
     photo_dialogRef.close();
+    photo_dialogRef.classList.add("opened");
 }
 
 function BubblingProtection(event) {
     event.stopPropagation();
 }
+
+// #endregion
