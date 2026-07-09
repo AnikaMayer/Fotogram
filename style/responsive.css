@@ -1,8 +1,3 @@
-:root {
-    --contentbegrenzung: clamp(16px, 12.64375% - 47.07px, 135px);
-    --padding_header: clamp(76px, 10dvw, 140px);
-}
-
 @media screen and (max-width: 747px) {
     .header_main {
         height: clamp(70px, 19dvw, 80px);
@@ -11,7 +6,7 @@
 
         img {
             height: auto;
-            width: clamp(168px, 10dvw, 216px);
+            width: clamp(168px, 52dvw, 216px);
         }
     }
 

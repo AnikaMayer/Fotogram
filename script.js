@@ -5,7 +5,7 @@ function renderGallery() {
 
     for (let i = 0; i < photoArray.length; i++) {
         photo_containerRef.innerHTML += /*html*/`
-        <button class="photo_box" onclick="openDialog(${i})">
+        <button aria-label="show large photo" class="photo_box" onclick="openDialog(${i})">
             <img id="photo$(photoArray[i])" src="./assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
         </button>
     `
@@ -29,9 +29,9 @@ function templateDialog(i) {
             <img src="./assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
         </div>
         <footer class="dialog_foot">
-            <button id="left" class="button_left" onclick="changeToPrevPhoto(${i})"><img src="./assets/icons/arrow.svg" alt=""></button>
+            <button id="left" class="button_left" onclick="changeToPrevPhoto(${i})"><img src="./assets/icons/arrow.svg" alt="previous_photo"></button>
             <p>${[i + 1]}/${photoArray.length}</p>
-            <button id="right" class="button_right" onclick="changeToNextPhoto(${i})"><img src="./assets/icons/arrow.svg" alt="next_button"></button>
+            <button id="right" class="button_right" onclick="changeToNextPhoto(${i})"><img src="./assets/icons/arrow.svg" alt="next_photo"></button>
         </footer>
     </div>
     `
