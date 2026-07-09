@@ -8,7 +8,7 @@ body {
     justify-content: center;
 }
 
-header {
+.header_main {
     height: 80px;
     width: 100%;
     background-color: var(--bg_darkblue_light);
@@ -63,6 +63,7 @@ main {
         .photo_box {
             height: 150px;
             width: 150px;
+            border-radius: 15px;
             border: none;
             background: none;
             cursor: pointer;
@@ -90,7 +91,8 @@ main {
 
 .dialog_wrapper {
     height: 670px;
-    width: auto;
+    /* width: auto; */
+    width: 680px;
     background-color: var(--bg_darkblue_light);
     border-radius: 40px;
     border: none;
@@ -111,9 +113,10 @@ main {
     }
 
     .dialog_head {
+        width: 100%;
+        max-width: 560px;
         display: flex;
         justify-content: space-between;
-        align-self: normal;
 
         h2 {
             font-size: 1.5rem;
@@ -222,7 +225,7 @@ dialog.opened::backdrop {
     transition: all 250ms ease-in;
 }
 
-footer {
+.footer_main {
     height: 120px;
     width: 100%;
     background-color: var(--bg_darkblue_light);
