@@ -1,3 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0;
+    font-family: "Figtree";
+    color: var(--font_white);
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+html {
+    font-size: 16px;
+}
+
 :root {
     --bg_darkblue_light: rgba(9, 33, 42, 1);
     --bg_darkblue_dark: rgba(6, 23, 30, 1);
