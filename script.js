@@ -1,45 +1,18 @@
-// #region render boxes
+const photo_dialogRef = document.getElementById('photo_dialog');
 
-function renderGallery() {
+// #region photoGallery
+
+function renderGallery(i) {
     const photo_containerRef = document.getElementById('photo_container');
 
     for (let i = 0; i < photoArray.length; i++) {
-        photo_containerRef.innerHTML += /*html*/`
-        <button aria-label="show large photo" class="photo_box" onclick="openDialog(${i})">
-            <img id="photo$(photoArray[i])" src="./assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
-        </button>
-    `
+        photo_containerRef.innerHTML += templateGallery(i);
     }
 }
 
 // #endregion
 
-// #region dialog template
-
-const photo_dialogRef = document.getElementById('photo_dialog');
-
-function templateDialog(i) {
-    return /*html*/`
-    <div class="dialog_box" onclick="BubblingProtection(event)">
-        <header class="dialog_head">
-            <h2>${photoArray[i].name}</h2>
-            <button onclick="closeDialog()"><img src="./assets/icons/close_button.svg" alt="closing_button"></button>
-        </header>
-        <div class="dialog_img">
-            <img src="./assets/img/${photoArray[i].path}" alt="${photoArray[i].name}">
-        </div>
-        <footer class="dialog_foot">
-            <button id="left" class="button_left" onclick="changeToPrevPhoto(${i})"><img src="./assets/icons/arrow.svg" alt="previous_photo"></button>
-            <p>${[i + 1]}/${photoArray.length}</p>
-            <button id="right" class="button_right" onclick="changeToNextPhoto(${i})"><img src="./assets/icons/arrow.svg" alt="next_photo"></button>
-        </footer>
-    </div>
-    `
-}
-
-// #endregion
-
-// #region dialog functions
+// #region dialog
 
 function openDialog(i) {
     photo_dialogRef.showModal();
@@ -70,7 +43,7 @@ function closeDialog() {
     photo_dialogRef.classList.add("opened");
 }
 
-function BubblingProtection(event) {
+function bubblingProtection(event) {
     event.stopPropagation();
 }
 
