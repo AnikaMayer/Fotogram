@@ -14,7 +14,7 @@ function templateGallery(i) {
 
 function templateDialog(i) {
     return /*html*/`
-    <div class="dialog_box" onclick="BubblingProtection(event)">
+    <div class="dialog_box" onclick="bubblingProtection(event)">
         <header class="dialog_head">
             <h2>${photoArray[i].name}</h2>
             <button onclick="closeDialog()"><img src="./assets/icons/close_button.svg" alt="closing_button"></button>
